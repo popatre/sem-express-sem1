@@ -1,0 +1,11 @@
+{
+    "id": 3,
+    "name": "The Beatles",
+    "members": [
+        "Paul McCartney",
+        "John Lennon",
+        "Ringo Starr",
+        "George Harrison"
+    ],
+    "yearFormed": 1960
+}
