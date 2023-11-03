@@ -2,5 +2,28 @@
     "id": 2,
     "name": "Green Day",
     "members": ["Billie-Joe Armstrong", "Tre Cool", "Mike Dirnt"],
-    "yearFormed": 1987
+    "yearFormed": 1987,
+    "songs": [
+        {
+            "id": "s4",
+            "songName": "American Idiot",
+            "released": "2004",
+            "genre": "rock",
+            "explicit": "true"
+        },
+        {
+            "id": "s5",
+            "songName": "Minority",
+            "released": "2000",
+            "genre": "folk-punk",
+            "explicit": "true"
+        },
+        {
+            "id": "s6",
+            "songName": "Warning",
+            "released": "2000",
+            "genre": "pop",
+            "explicit": "false"
+        }
+    ]
 }

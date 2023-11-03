@@ -2,39 +2,27 @@ const fs = require("fs/promises");
 const express = require("express");
 const app = express();
 
-// if someone passes a query - send them back to ones with that genre
-// if they dont pass a query, send them back all songs
+app.get("/api/band/:id", (req, res) => {
+    const bandId = req.params.id;
+    const includeExplicit = req.query.explicit;
+    console.log(includeExplicit);
 
-app.get("/api/songs", (req, res) => {
-    const genre = req.query.genre;
+    fs.readFile(`${__dirname}/data/bands/${bandId}.json`, "utf-8").then(
+        (fileContents) => {
+            const parsedFile = JSON.parse(fileContents);
 
-    //get all the names of the song files
-    fs.readdir(`${__dirname}/data/songs`)
-        .then((fileNames) => {
-            // bundle up pending reads
-            const pendingPromises = fileNames.map((fileName) => {
-                // read each file name (pending)
-                const pendingRead = fs.readFile(
-                    `${__dirname}/data/songs/${fileName}`,
-                    "utf8"
-                );
-                return pendingRead;
-            });
+            const songs = parsedFile.songs;
 
-            return Promise.all(pendingPromises);
-        })
-        .then((songsData) => {
-            const parsedSongs = songsData.map((song) => JSON.parse(song));
-
-            if (genre) {
-                const songsByGenre = parsedSongs.filter((song) => {
-                    return song.genre === genre;
+            if (includeExplicit) {
+                const queriedSongs = songs.filter((song) => {
+                    return song.explicit === includeExplicit;
                 });
-                res.status(200).send({ songs: songsByGenre });
+                res.status(200).send({ songs: queriedSongs });
             } else {
-                res.status(200).send({ songs: parsedSongs });
+                res.status(200).send({ songs: songs });
             }
-        });
+        }
+    );
 });
 
 app.listen(9090, () => {

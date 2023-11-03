@@ -1,6 +1,9 @@
 # Bands and Songs
 
-2. GET /songs
+1. GET /api/band/:id
 
-    - responds with an array containing all of the songs.
-    - This endpoint should accept a query of genre so that users can filter songs by their genre, e.g. GET /api/songs?genre=pop responds with an array containing all the songs with a genre of pop
+    - responds with songs by request band
+
+2. GET /api/band/:id?explicit=false
+
+    - responds with songs by requested band - that doesnt include any effing and jeffing

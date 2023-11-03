@@ -7,5 +7,28 @@
         "Ringo Starr",
         "George Harrison"
     ],
-    "yearFormed": 1960
+    "yearFormed": 1960,
+    "songs": [
+        {
+            "id": "s6",
+            "songName": "Hey Jude",
+            "released": "1968",
+            "genre": "pop-rock",
+            "explicit": "false"
+        },
+        {
+            "id": "s8",
+            "songName": "From Me to You",
+            "released": "1963",
+            "genre": "merseybeat",
+            "explicit": "false"
+        },
+        {
+            "id": "s9",
+            "songName": "I Want to Hold Your Hand",
+            "released": "1963",
+            "genre": "pop",
+            "explicit": "false"
+        }
+    ]
 }

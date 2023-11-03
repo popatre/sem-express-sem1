@@ -2,5 +2,28 @@
     "id": 1,
     "name": "Weezer",
     "members": ["Rivers Cuomo", "Brian Bell", "Pat Wilson", "Scott Shriner"],
-    "yearFormed": 1992
+    "yearFormed": 1992,
+    "songs": [
+        {
+            "id": "s1",
+            "songName": "Say it Aint So",
+            "released": "1994",
+            "genre": "alternative",
+            "explicit": "false"
+        },
+        {
+            "id": "s2",
+            "songName": "El Scorcho",
+            "released": "1996",
+            "genre": "rock",
+            "explicit": "true"
+        },
+        {
+            "id": "s3",
+            "songName": "Island in the sun",
+            "released": "2001",
+            "genre": "pop",
+            "explicit": "false"
+        }
+    ]
 }
